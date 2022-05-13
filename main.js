@@ -533,20 +533,65 @@ The program reports the nth day (as an integer) on which the evaporator will be 
 // console.log(sumArray([-6, -20, -1, -10, -12])); //-> -28 );
 // console.log(sumArray([-6, 20, -1, 10, -12])); // -> 3 );
 
-/**
- * Beginner Series #2 Clock
- */
+// /**
+//  * Beginner Series #2 Clock
+//  */
 
-//  Clock shows h hours, m minutes and s seconds after midnight.
+// //  Clock shows h hours, m minutes and s seconds after midnight.
 
-//  Your task is to write a function which returns the time since midnight in milliseconds.
+// //  Your task is to write a function which returns the time since midnight in milliseconds.
 
-function past(h, m, s) {
-  return h * 3600000 + m * 60000 + s * 1000;
-}
+// function past(h, m, s) {
+//   return h * 3600000 + m * 60000 + s * 1000;
+// }
 
-console.log(past(0, 1, 1)); // -> 61000
-console.log(past(1, 1, 1)); // -> 3661000
-console.log(past(0, 0, 0)); // -> 0
-console.log(past(1, 0, 1)); // -> 3601000
-console.log(past(1, 0, 0)); // -> 3600000
+// console.log(past(0, 1, 1)); // -> 61000
+// console.log(past(1, 1, 1)); // -> 3661000
+// console.log(past(0, 0, 0)); // -> 0
+// console.log(past(1, 0, 1)); // -> 3601000
+// console.log(past(1, 0, 0)); // -> 3600000
+
+// /**
+//  * Square Every Digit
+//  */
+
+// // Welcome. In this kata, you are asked to square every digit of a number and concatenate them.
+
+// // For example, if we run 9119 through the function, 811181 will come out, because 92 is 81 and 12 is 1.
+
+// // Note: The function accepts an integer and returns an integer
+
+// function squareDigits(num) {
+//   return +String(num)
+//     .split("")
+//     .map(char => +char * +char)
+//     .join("");
+// }
+
+// console.log(squareDigits(3212)); // -> 9414
+// console.log(squareDigits(2112)); // -> 4114
+// console.log(squareDigits(0)); // -> 0
+
+// /**
+//  * Unique In Order
+//  */
+
+// // Implement the function unique_in_order which takes as argument a sequence and returns a list of items without any elements with the same value next to each other and preserving the original order of elements.
+
+// var uniqueInOrder = function (iterable) {
+//   return Array.from(iterable).reduce((arr, currentValue) => {
+//     if (!arr.length) arr.push(currentValue);
+//     if (arr[arr.length - 1] !== currentValue) arr.push(currentValue);
+//     return arr;
+//   }, []);
+// };
+
+// var uniqueInOrder=function(iterable){
+//   return [...iterable].filter((a, i) => a !== iterable[i-1])
+// }
+
+// console.log(uniqueInOrder("AAAABBBCCDAABBB")); // -> ['A', 'B', 'C', 'D', 'A', 'B']
+// console.log(uniqueInOrder("ABBCcAD")); // -> ['A', 'B', 'C', 'c', 'A', 'D']
+// console.log(uniqueInOrder([1, 2, 2, 3, 3])); // -> [1,2,3]
+// console.log(uniqueInOrder([])); // -> []
+// console.log(uniqueInOrder("")); // -> []
