@@ -595,3 +595,40 @@ The program reports the nth day (as an integer) on which the evaporator will be 
 // console.log(uniqueInOrder([1, 2, 2, 3, 3])); // -> [1,2,3]
 // console.log(uniqueInOrder([])); // -> []
 // console.log(uniqueInOrder("")); // -> []
+
+/**
+ * Duplicate Encoder
+ */
+
+// The goal of this exercise is to convert a string to a new string where each character in the new string is "(" if that character appears only once in the original string, or ")" if that character appears more than once in the original string. Ignore capitalization when determining if a character is a duplicate.
+
+// function duplicateEncode(word) {
+//   const charTracker = word
+//     .toLowerCase()
+//     .split("")
+//     .reduce((obj, char) => {
+//       obj[char] = obj[char] ? obj[char] + 1 : 1;
+//       return obj;
+//     }, {});
+
+//   return word
+//     .toLowerCase()
+//     .split("")
+//     .map(char => (charTracker[char] > 1 ? ")" : "("))
+//     .join("");
+// }
+
+// function duplicateEncode(word) {
+//   return word
+//     .toLowerCase()
+//     .split("")
+//     .map(function (a, i, w) {
+//       return w.indexOf(a) == w.lastIndexOf(a) ? "(" : ")";
+//     })
+//     .join("");
+// }
+
+// console.log(duplicateEncode("din")); // -> "((("
+// console.log(duplicateEncode("recede")); // -> "()()()"
+// console.log(duplicateEncode("Success")); // -> ")())())","should ignore case"
+// console.log(duplicateEncode("(( @")); // -> "))(("
