@@ -665,3 +665,23 @@ The program reports the nth day (as an integer) on which the evaporator will be 
 // console.log(removeSmallest([5, 3, 2, 1, 4])); // -> [5, 3, 2, 4]
 // console.log(removeSmallest([2, 2, 1, 2, 1])); // -> [2, 2, 2, 1]
 // console.log(removeSmallest([])); // -> []
+
+/**
+ * Get the Middle Character
+ */
+
+// You are going to be given a word. Your job is to return the middle character of the word. If the word's length is odd, return the middle character. If the word's length is even, return the middle 2 characters.
+
+// function getMiddle(s) {
+//   return s.length % 2 == 0
+//     ? s
+//         .split("")
+//         .slice(Math.floor(s.length / 2) - 1, Math.floor(s.length / 2) + 1)
+//         .join("")
+//     : s.split("")[Math.floor(s.length / 2)];
+// }
+
+// console.log(getMiddle("test")); // -> "es"
+// console.log(getMiddle("testing")); // -> "t"
+// console.log(getMiddle("middle")); // -> "dd"
+// console.log(getMiddle("A")); // -> "A"
