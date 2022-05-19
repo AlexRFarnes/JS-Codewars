@@ -685,3 +685,38 @@ The program reports the nth day (as an integer) on which the evaporator will be 
 // console.log(getMiddle("testing")); // -> "t"
 // console.log(getMiddle("middle")); // -> "dd"
 // console.log(getMiddle("A")); // -> "A"
+
+/**
+ * Sum of the first nth term of Series
+ */
+
+// Your task is to write a function which returns the sum of following series upto nth term(parameter).
+
+// function SeriesSum(n) {
+//   let sum = 0;
+//   let i = 0;
+//   while (i < n) {
+//     sum += 1 / (i * 3 + 1);
+//     i++;
+//   }
+//   return sum.toFixed(2);
+// }
+
+// function SeriesSumRecursive(n, acc = 0) {
+//   if (n === 0) return acc.toFixed(2);
+//   else {
+//     acc += 1 / (3 * n - 2);
+//     return SeriesSumRecursive(n - 1, acc);
+//   }
+// }
+
+// console.log(SeriesSum(0)); // -> "0.00"
+// console.log(SeriesSumRecursive(0)); // -> "0.00"
+// console.log(SeriesSum(1)); // -> "1.00"
+// console.log(SeriesSumRecursive(1)); // -> "1.00"
+// console.log(SeriesSum(2)); // -> "1.25"
+// console.log(SeriesSumRecursive(2)); // -> "1.25"
+// console.log(SeriesSum(3)); // -> "1.39"
+// console.log(SeriesSumRecursive(3)); // -> "1.39"
+// console.log(SeriesSum(4)); // -> "1.49"
+// console.log(SeriesSumRecursive(4)); // -> "1.49"
