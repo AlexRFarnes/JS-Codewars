@@ -866,3 +866,46 @@ console.log(findNb(4183059834009)); // -> 2022
 console.log(findNb(24723578342962)); // -> -1
 console.log(findNb(135440716410000)); // -> 4824
 console.log(findNb(40539911473216)); // -> 3568
+
+/**
+ * Highest Scoring Word
+ */
+
+//  Given a string of words, you need to find the highest scoring word.
+
+//  Each letter of a word scores points according to its position in the alphabet: a = 1, b = 2, c = 3 etc.
+
+//  You need to return the highest scoring word as a string.
+
+//  If two words score the same, return the word that appears earliest in the original string.
+
+//  All letters will be lowercase and all inputs will be valid.
+
+function high(x) {
+  let maxWord = "";
+  let maxScore = 0;
+  x.split(" ").forEach(word => {
+    const wordScore = word
+      .split("")
+      .reduce((sum, char) => sum + char.charCodeAt() - 96, 0);
+    [maxWord, maxScore] =
+      wordScore > maxScore ? [word, wordScore] : [maxWord, maxScore];
+  });
+  return maxWord;
+}
+
+// function high(x) {
+//   let scores = x
+//     .split(" ")
+//     .map(word => word.split("").reduce((a, b) => a + b.charCodeAt() - 96, 0));
+//   return x.split(" ")[scores.indexOf(Math.max(...scores))];
+// }
+
+console.log(high("man i need a taxi up to ubud")); // ->  'taxi'
+console.log(high("what time are we climbing up the volcano")); // ->'volcano');
+console.log(high("take me to semynak")); // ->  'semynak');
+console.log(high("aa b")); // ->  'aa'
+console.log(high("b aa")); // ->  'b'
+console.log(high("bb d")); // ->  'bb'
+console.log(high("d bb")); // ->  'd'
+console.log(high("aaa b")); // ->  'aaa'
