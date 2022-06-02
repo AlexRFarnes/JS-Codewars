@@ -1041,3 +1041,31 @@ var haystack_3 = [
 console.log(findNeedle(haystack_1)); //-> 'found the needle at position 3')
 console.log(findNeedle(haystack_2)); //-> 'found the needle at position 5')
 console.log(findNeedle(haystack_3)); //-> 'found the needle at position 30')
+
+/**
+ * Shortest Word
+ */
+
+// Simple, given a string of words, return the length of the shortest word(s).
+
+// String will never be empty and you do not need to account for different data types.
+
+// function findShort(s) {
+//   let shortestWordLength = 1000;
+//   s.split(" ").forEach(word => {
+//     if (word.length < shortestWordLength) shortestWordLength = word.length;
+//   });
+//   return shortestWordLength;
+// }
+
+function findShort(s) {
+  return Math.min(...s.split(" ").map(w => w.length));
+}
+
+console.log(findShort("bitcoin take over the world maybe who knows perhaps")); // -> 3
+console.log(
+  findShort(
+    "turns out random test cases are easier than writing out basic ones"
+  )
+); // -> 3
+console.log(findShort("Let's travel abroad shall we")); // ->  2
