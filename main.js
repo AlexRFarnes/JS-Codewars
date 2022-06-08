@@ -1266,3 +1266,23 @@ console.log(productFib(84049690)); // -> [10946, 17711, false]
 console.log(productFib(193864606)); // -> [10946, 17711, true]
 console.log(productFib(447577)); // -> [610, 987, false]
 console.log(productFib(602070)); // -> [610, 987, true]
+
+/**
+ * Sum of positive
+ */
+
+// You get an array of numbers, return the sum of all of the positives ones.
+
+// Example [1,-4,7,12] => 1 + 7 + 12 = 20
+
+// Note: if there is nothing to sum, the sum is default to 0.
+
+function positiveSum(arr) {
+  return arr.reduce((sum, num) => (sum += num > 0 ? num : 0), 0);
+}
+
+console.log(positiveSum([1, 2, 3, 4, 5])); // -> 15
+console.log(positiveSum([1, -2, 3, 4, 5])); // -> 13
+console.log(positiveSum([])); // -> 0
+console.log(positiveSum([-1, -2, -3, -4, -5])); // -> 0
+console.log(positiveSum([-1, 2, 3, 4, -5])); // -> 9
