@@ -1560,22 +1560,34 @@ console.log(
 // [5, 8, 6, 3, 4]  =>  [3, 8, 6, 5, 4]
 // [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]  =>  [1, 8, 3, 6, 5, 4, 7, 2, 9, 0]
 
+// function sortArray(array) {
+//   let oddObj = {
+//     nums: [],
+//     idxs: [],
+//   };
+//   array.forEach((num, idx) => {
+//     if (num % 2 != 0) {
+//       oddObj.nums.push(num);
+//       oddObj.idxs.push(idx);
+//     }
+//   });
+//   oddObj.nums = oddObj.nums.sort((a, b) => a - b);
+//   for (let i = 0; i < oddObj.idxs.length; i++) {
+//     array.splice(oddObj.idxs[i], 1, oddObj.nums[i]);
+//   }
+//   return array;
+// }
+
 function sortArray(array) {
-  let oddObj = {
-    nums: [],
-    idxs: [],
-  };
-  array.forEach((num, idx) => {
+  let oddNums = array.filter(num => num % 2 != 0).sort((a, b) => a - b);
+  return array.map(num => {
     if (num % 2 != 0) {
-      oddObj.nums.push(num);
-      oddObj.idxs.push(idx);
+      oddNum = oddNums.shift();
+      return oddNum;
+    } else {
+      return num;
     }
   });
-  oddObj.nums = oddObj.nums.sort((a, b) => a - b);
-  for (let i = 0; i < oddObj.idxs.length; i++) {
-    array.splice(oddObj.idxs[i], 1, oddObj.nums[i]);
-  }
-  return array;
 }
 
 console.log(sortArray([5, 3, 2, 8, 1, 4])); // ->  [1, 3, 2, 8, 5, 4]
