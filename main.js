@@ -1548,3 +1548,37 @@ console.log(
     0, 2, 3, 0, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14,
   ])
 ); // [8, -50]
+
+/**
+ * Sort the odd
+ */
+
+// You will be given an array of numbers. You have to sort the odd numbers in ascending order while leaving the even numbers at their original positions.
+// Examples
+
+// [7, 1]  =>  [1, 7]
+// [5, 8, 6, 3, 4]  =>  [3, 8, 6, 5, 4]
+// [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]  =>  [1, 8, 3, 6, 5, 4, 7, 2, 9, 0]
+
+function sortArray(array) {
+  let oddObj = {
+    nums: [],
+    idxs: [],
+  };
+  array.forEach((num, idx) => {
+    if (num % 2 != 0) {
+      oddObj.nums.push(num);
+      oddObj.idxs.push(idx);
+    }
+  });
+  oddObj.nums = oddObj.nums.sort((a, b) => a - b);
+  for (let i = 0; i < oddObj.idxs.length; i++) {
+    array.splice(oddObj.idxs[i], 1, oddObj.nums[i]);
+  }
+  return array;
+}
+
+console.log(sortArray([5, 3, 2, 8, 1, 4])); // ->  [1, 3, 2, 8, 5, 4]
+console.log(sortArray([5, 3, 1, 8, 0])); // ->  [1, 3, 5, 8, 0]
+console.log(sortArray([])); // -> []
+console.log(sortArray([1, 11, 2, 8, 3, 4, 5])); // -> [ 1, 3, 2, 8, 5, 4, 11 ]
