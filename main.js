@@ -1619,3 +1619,21 @@ console.log(sortArray([5, 3, 2, 8, 1, 4])); // ->  [1, 3, 2, 8, 5, 4]
 console.log(sortArray([5, 3, 1, 8, 0])); // ->  [1, 3, 5, 8, 0]
 console.log(sortArray([])); // -> []
 console.log(sortArray([1, 11, 2, 8, 3, 4, 5])); // -> [ 1, 3, 2, 8, 5, 4, 11 ]
+
+/**
+ * Calculate average
+ */
+
+// Write a function which calculates the average of the numbers in a given list.
+
+// Note: Empty arrays should return 0.
+
+function find_average(array) {
+  return array.length > 0
+    ? array.reduce((sum, num) => (sum += num), 0) / array.length
+    : 0;
+}
+
+console.log(find_average([1, 1, 1])); // ->  1
+console.log(find_average([1, 2, 3])); // ->  2
+console.log(find_average([1, 2, 3, 4])); // ->  2.5
