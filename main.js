@@ -1630,10 +1630,26 @@ console.log(sortArray([1, 11, 2, 8, 3, 4, 5])); // -> [ 1, 3, 2, 8, 5, 4, 11 ]
 
 function find_average(array) {
   return array.length > 0
-    ? array.reduce((sum, num) => (sum += num), 0) / array.length
+    ? array.reduce((sum, num) => sum + num, 0) / array.length
     : 0;
 }
 
 console.log(find_average([1, 1, 1])); // ->  1
 console.log(find_average([1, 2, 3])); // ->  2
 console.log(find_average([1, 2, 3, 4])); // ->  2.5
+
+/**
+ * Beginner - Reduce but Grow
+ */
+
+//Given a non-empty array of integers, return the result of multiplying the values together in order. Example:
+
+// [1, 2, 3, 4] => 1 * 2 * 3 * 4 = 24
+
+function grow(x) {
+  return x.reduce((acc, num) => acc * num);
+}
+
+console.log(grow([1, 2, 3])); // -> 6
+console.log(grow([4, 1, 1, 1, 4])); // -> 16
+console.log(grow([2, 2, 2, 2, 2, 2])); // -> 64
