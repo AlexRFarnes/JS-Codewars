@@ -1667,13 +1667,13 @@ console.log(grow([2, 2, 2, 2, 2, 2])); // -> 64
 
 //  The tests contain some very huge arrays, so think about performance.
 
-// function findUniq(arr) {
-//   let uniq;
-//   arr.forEach(el => {
-//     if (arr.indexOf(el) == arr.lastIndexOf(el)) uniq = el;
-//   });
-//   return uniq;
-// }
+function findUniq(arr) {
+  let uniq;
+  arr.forEach(el => {
+    if (arr.indexOf(el) == arr.lastIndexOf(el)) uniq = el;
+  });
+  return uniq;
+}
 
 function findUniq(arr) {
   return arr.find(el => arr.indexOf(el) == arr.lastIndexOf(el));
