@@ -1713,3 +1713,19 @@ function dontGiveMeFive(start, end) {
 console.log(dontGiveMeFive(1, 9)); // -> 8
 console.log(dontGiveMeFive(4, 17)); // -> 12
 console.log(dontGiveMeFive(-15, -2)); // -> 12
+
+/**
+ * Simple multiplication
+ */
+
+// This kata is about multiplying a given number by eight if it is an even number and by nine otherwise.
+
+function simpleMultiplication(number) {
+  return number % 2 == 0 ? number * 8 : number * 9;
+}
+
+console.log(simpleMultiplication(2)); // -> 16
+console.log(simpleMultiplication(1)); // -> 9
+console.log(simpleMultiplication(8)); // -> 64
+console.log(simpleMultiplication(4)); // -> 32
+console.log(simpleMultiplication(5)); // -> 45
