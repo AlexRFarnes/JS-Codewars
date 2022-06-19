@@ -1729,3 +1729,27 @@ console.log(simpleMultiplication(1)); // -> 9
 console.log(simpleMultiplication(8)); // -> 64
 console.log(simpleMultiplication(4)); // -> 32
 console.log(simpleMultiplication(5)); // -> 45
+
+/**
+ * Count characters in your string
+ */
+
+// The main idea is to count all the occurring characters in a string. If you have a string like aba, then the result should be {'a': 2, 'b': 1}.
+
+// What if the string is empty? Then the result should be empty object literal, {}.
+
+function count(string) {
+  // The function code should be here
+  return string.split("").reduce((counter, char) => {
+    if (counter[char]) {
+      counter[char] += 1;
+    } else {
+      counter[char] = 1;
+    }
+
+    return counter;
+  }, {});
+}
+
+console.log(count("aba")); // -> { a: 2, b: 1 }
+console.log(count("")); // -> {}
