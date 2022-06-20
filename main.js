@@ -1739,7 +1739,6 @@ console.log(simpleMultiplication(5)); // -> 45
 // What if the string is empty? Then the result should be empty object literal, {}.
 
 function count(string) {
-  // The function code should be here
   return string.split("").reduce((counter, char) => {
     if (counter[char]) {
       counter[char] += 1;
@@ -1753,3 +1752,31 @@ function count(string) {
 
 console.log(count("aba")); // -> { a: 2, b: 1 }
 console.log(count("")); // -> {}
+
+/**
+ * Detect Pangram
+ */
+
+//  A pangram is a sentence that contains every single letter of the alphabet at least once. For example, the sentence "The quick brown fox jumps over the lazy dog" is a pangram, because it uses the letters A-Z at least once (case is irrelevant).
+
+//  Given a string, detect whether or not it is a pangram. Return True if it is, False if not. Ignore numbers and punctuation.
+
+function isPangram(string) {
+  return (
+    Object.keys(
+      string
+        .toLowerCase()
+        .split("")
+        .reduce((obj, char) => {
+          if (char.charCodeAt() > 96 && char.charCodeAt() < 123) {
+            obj[char] = 1;
+          }
+
+          return obj;
+        }, {})
+    ).length == 26
+  );
+}
+
+console.log(isPangram("The quick brown fox jumps over the lazy dog.")); // => true
+console.log(isPangram("This is not a pangram.")); // => false
