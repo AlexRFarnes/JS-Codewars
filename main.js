@@ -1800,7 +1800,7 @@ console.log(Kata.getVolumeOfCuboid(6.3, 2, 5)); // -> 63
  * Century From Year
  */
 
-// ntroduction
+// Introduction
 
 // The first century spans from the year 1 up to and including the year 100, the second century - from the year 101 up to and including the year 200, etc.
 // Task
@@ -1814,7 +1814,6 @@ console.log(Kata.getVolumeOfCuboid(6.3, 2, 5)); // -> 63
 // 2000 --> 20
 
 function century(year) {
-  // Finish this :)
   return Math.ceil(year / 100);
 }
 
@@ -1823,3 +1822,24 @@ console.log(century(1900)); // -> 19
 console.log(century(1601)); // -> 17
 console.log(century(2000)); // -> 20
 console.log(century(89)); // -> 1
+
+/**
+ * Extract the domain name from a URL
+ */
+
+// Write a function that when given a URL as a string, parses out just the domain name and returns it as a string. For example:
+
+// * url = "http://github.com/carbonfive/raygun" -> domain name = "github"
+// * url = "http://www.zombie-bites.com"         -> domain name = "zombie-bites"
+// * url = "https://www.cnet.com"                -> domain name = cnet"
+
+function domainName(url) {
+  return url
+    .match(/^(?:https?:)?(?:\/\/)?(?:[^@\n]+@)?(?:www\.)?([^:\/\n]+)/im)[1]
+    .split(".")[0];
+}
+
+console.log(domainName("http://google.com")); // -> "google"
+console.log(domainName("http://google.co.jp")); // -> "google"
+console.log(domainName("www.xakep.ru")); // -> "xakep"
+console.log(domainName("https://youtube.com")); // -> "youtube"
