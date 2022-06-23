@@ -1879,3 +1879,22 @@ a2 = ["lively", "alive", "harp", "sharp", "armstrong"];
 console.log(inArray(["xyz", "live", "strong"], a2)); // ->  ["live", "strong"]
 console.log(inArray(["live", "strong", "arp"], a2)); // ->  ["arp", "live", "strong"]
 console.log(inArray(["tarp", "mice", "bull"], a2)); // ->  []
+
+/**
+ * Array plus array
+ */
+
+// I'm new to coding and now I want to get the sum of two arrays...actually the sum of all their elements. I'll appreciate for your help.
+
+// P.S. Each array includes only integer numbers. Output is a number too.
+
+function arrayPlusArray(arr1, arr2) {
+  return (
+    arr1.reduce((sum, num) => sum + num) + arr2.reduce((sum, num) => sum + num)
+  ); //something went wrong
+}
+
+console.log(arrayPlusArray([1, 2, 3], [4, 5, 6])); // -> 21
+console.log(arrayPlusArray([-1, -2, -3], [-4, -5, -6])); // -> -21
+console.log(arrayPlusArray([0, 0, 0], [4, 5, 6])); // -> 15
+console.log(arrayPlusArray([100, 200, 300], [400, 500, 600])); // -> 2100
