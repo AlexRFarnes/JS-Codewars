@@ -1970,3 +1970,22 @@ function numberLine(array) {
 
 console.log(numberLine([])); // => []
 console.log(numberLine(["a", "b", "c"])); // => ["1: a", "2: b", "3: c"]
+
+/**
+ * Is it a palindrome?
+ */
+
+// Write a function that checks if a given string (case insensitive) is a palindrome.
+
+function isPalindrome(x) {
+  return x.toLowerCase() == x.split("").reverse().join("").toLowerCase();
+}
+
+console.log(isPalindrome("a")); // -> true
+console.log(isPalindrome("aba")); // -> true
+console.log(isPalindrome("Abba")); // -> true
+console.log(isPalindrome("hello")); // -> false
+console.log(isPalindrome("Bob")); // -> true
+console.log(isPalindrome("Madam")); // -> true
+console.log(isPalindrome("AbBa")); // -> true
+console.log(isPalindrome("")); // -> true
