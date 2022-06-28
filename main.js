@@ -2048,3 +2048,52 @@ console.log(index([1, 1, 1, 1, 1, 1, 1, 1, 1, 2], 9)); // -> 512
 console.log(index([29, 82, 45, 10], 3)); // -> 1000
 console.log(index([6, 31], 3)); // -> -1
 console.log(index([75, 68, 35, 61, 9, 36, 89, 0, 30], 10)); // -> -1
+
+/**
+ * Grasshopper - Messi goals function
+ */
+
+//  Messi goals function
+
+// Messi is a soccer player with goals in three leagues:
+
+//     LaLiga
+//     Copa del Rey
+//     Champions
+
+// Complete the function to return his total number of goals in all three leagues.
+
+// Note: the input will always be valid.
+
+// For example:
+
+// 5, 10, 2  -->  17
+
+function goals(laLigaGoals, copaDelReyGoals, championsLeagueGoals) {
+  return laLigaGoals + copaDelReyGoals + championsLeagueGoals;
+}
+
+console.log(goals(0, 0, 0)); // -> 0
+console.log(goals(43, 10, 5)); // -> 58
+
+/**
+ * Two to One
+ */
+
+//  Take 2 strings s1 and s2 including only letters from a to z. Return a new sorted string, the longest possible, containing distinct letters - each taken only once - coming from s1 or s2.
+//  Examples:
+
+//  a = "xyaabbbccccdefww"
+//  b = "xxxxyyyyabklmopq"
+//  longest(a, b) -> "abcdefklmopqwxy"
+
+//  a = "abcdefghijklmnopqrstuvwxyz"
+//  longest(a, a) -> "abcdefghijklmnopqrstuvwxyz"
+
+function longest(s1, s2) {
+  return Array.from(new Set((s1 + s2).split("").sort())).join("");
+}
+
+console.log(longest("aretheyhere", "yestheyarehere")); // -> "aehrsty"
+console.log(longest("loopingisfunbutdangerous", "lessdangerousthancoding")); // -> "abcdefghilnoprstu"
+console.log(longest("inmanylanguages", "theresapairoffunctions")); // -> "acefghilmnoprstuy"
