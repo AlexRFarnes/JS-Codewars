@@ -2129,6 +2129,14 @@ String.prototype.toAlternatingCase = function () {
     .join("");
 };
 
+// String.prototype.toAlternatingCase = function () {
+//   return this.split("")
+//     .map(char =>
+//       char == char.toUpperCase() ? char.toLowerCase() : char.toUpperCase()
+//     )
+//     .join("");
+// };
+
 console.log("hello world".toAlternatingCase()); // -> "HELLO WORLD"
 console.log("HELLO WORLD".toAlternatingCase()); // -> "hello world"
 console.log("hello WORLD".toAlternatingCase()); // -> "HELLO world"
@@ -2137,3 +2145,37 @@ console.log("12345".toAlternatingCase()); // -> "12345"
 console.log("1a2b3c4d5e".toAlternatingCase()); // -> "1A2B3C4D5E"
 console.log("String.prototype.toAlternatingCase".toAlternatingCase()); // -> "sTRING.PROTOTYPE.TOaLTERNATINGcASE"
 console.log("Hello World".toAlternatingCase().toAlternatingCase()); // -> "Hello World"
+
+/**
+ * Ones and Zeros
+ */
+
+//  Given an array of ones and zeroes, convert the equivalent binary value to an integer.
+
+//  Eg: [0, 0, 0, 1] is treated as 0001 which is the binary representation of 1.
+
+//  Examples:
+
+//  Testing: [0, 0, 0, 1] ==> 1
+//  Testing: [0, 0, 1, 0] ==> 2
+//  Testing: [0, 1, 0, 1] ==> 5
+//  Testing: [1, 0, 0, 1] ==> 9
+//  Testing: [0, 0, 1, 0] ==> 2
+//  Testing: [0, 1, 1, 0] ==> 6
+//  Testing: [1, 1, 1, 1] ==> 15
+//  Testing: [1, 0, 1, 1] ==> 11
+
+//  However, the arrays can have varying lengths, not just limited to 4.
+
+const binaryArrayToNumber = arr => {
+  return arr.reverse().reduce((memo, num, idx) => memo + num * 2 ** idx, 0);
+};
+
+// const binaryArrayToNumber = arr => {
+//   return parseInt(arr.join(""), 2);
+// };
+
+console.log(binaryArrayToNumber([0, 0, 0, 1])); //-> 1
+console.log(binaryArrayToNumber([0, 0, 1, 0])); //-> 2
+console.log(binaryArrayToNumber([1, 1, 1, 1])); //-> 15
+console.log(binaryArrayToNumber([0, 1, 1, 0])); //-> 6
