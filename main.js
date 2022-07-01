@@ -2179,3 +2179,15 @@ console.log(binaryArrayToNumber([0, 0, 0, 1])); //-> 1
 console.log(binaryArrayToNumber([0, 0, 1, 0])); //-> 2
 console.log(binaryArrayToNumber([1, 1, 1, 1])); //-> 15
 console.log(binaryArrayToNumber([0, 1, 1, 0])); //-> 6
+
+/**
+ * Function 2 - squaring an argument
+ */
+
+// Now you have to write a function that takes an argument and returns the square of it.
+
+function square(num) {
+  return num ** 2;
+}
+
+console.log(square(3)); // -> 9
