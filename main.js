@@ -2602,3 +2602,21 @@ console.log(divisions(2450, 5)); // ->  4
 console.log(divisions(9999, 3)); // ->  8
 console.log(divisions(2, 3)); // ->  0
 console.log(divisions(5, 5)); // ->  1
+
+/**
+ * Grasshopper - Personalized Message
+ */
+
+// Create a function that gives a personalized greeting. This function takes two parameters: name and owner.
+
+// Use conditionals to return the proper message:
+// case 	              return
+// name equals owner 	 'Hello boss'
+// otherwise 	         'Hello guest'
+
+function greet(name, owner) {
+  return owner == name ? "Hello boss" : "Hello guest";
+}
+
+console.log(greet("Daniel", "Daniel")); // ->  'Hello boss'
+console.log(greet("Greg", "Daniel")); // ->  'Hello guest'
