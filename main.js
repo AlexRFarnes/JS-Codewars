@@ -2663,3 +2663,16 @@ function mult(x) {
 
 console.log(chain(2, [add, mult])); // -> 360
 console.log(chainReducer(2, [add, mult])); // -> 360
+
+/**
+ * Reverse list
+ */
+
+// Write reverseList function that simply reverses lists.
+
+function reverseList(arr) {
+  return arr.reverse();
+}
+
+console.log(reverseList([])); // -> []
+console.log(reverseList([1, 2, 3])); // -> [3,2,1]
